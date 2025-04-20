@@ -1,2 +1,34 @@
-# PINN-vs-NN-heat-equation
-Solving the 1D heat equation using a neural network and a physics-informed neural network (PINN).
+# PINN-vs-NN-heat-equation 🔥🧠
+
+This project demonstrates how to solve the **1D Heat Equation** using:
+- A standard **Feedforward Neural Network (FNN)**, and
+- A **Physics-Informed Neural Network (PINN)** that incorporates boundary and initial conditions directly into its loss function.
+
+## 📖 Equation Overview
+
+The heat equation is:
+\[
+\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}
+\]
+where `u(x, t)` is the temperature at position `x` and time `t`, and `α` is the thermal diffusivity constant.
+
+## 🧪 Approach
+
+### Method 1: Standard Neural Network
+- Samples random `(x, t)` points.
+- Minimizes residual loss from the heat PDE.
+
+### Method 2: Physics-Informed Neural Network (PINN)
+- Also includes losses from:
+  - Boundary condition: `u(0,t) = u(1,t) = 0`
+  - Initial condition: `u(x,0) = sin(πx)`
+
+## 🛠️ Dependencies
+- Python 3.x
+- PyTorch
+- NumPy
+- Matplotlib
+
+Install them using:
+```bash
+pip install torch numpy matplotlib
